@@ -1,5 +1,5 @@
 {
-  "main": "src/shared/infra/http/server.ts",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon .",
