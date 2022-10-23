@@ -1,9 +1,8 @@
 import express from "express";
 const app = express();
-import world1 from "./worlds/world1.json" assert { type: "json" };
-import world2 from "./worlds/world2.json" assert { type: "json" };
+// import world1 from  assert { type: "json" };
 import { worldFactory } from "./factory/worldFactory.js";
-import cors from "cors";
+import { createRequire } from "module";
 
 app.use(express.json());
 
@@ -29,6 +28,8 @@ io.on("connection", (socket) => {
   });
 
   socket.on("joinInFirstRoom", (callback) => {
+    const require1 = createRequire(import.meta.url);
+    const world1 = require1("./worlds/world1.json");
     socket.join("fistRoom");
     const world = worldFactory(world1);
 
@@ -61,29 +62,6 @@ io.on("connection", (socket) => {
       x,
       y,
     });
-  });
-});
-
-app.post("/world2", (req, res) => {
-  const { id } = req.body;
-  const findMyUser = Object.entries(users).map(([key, value]) => {
-    const level = value.find((user) => user.id === id);
-    return level ?? {};
-  })[0];
-
-  console.log(users);
-  console.log(users.level2);
-
-  users = removeUserToArray(id);
-  console.log(users);
-
-  res.json({
-    myCurrentWorld: world2,
-    initialUsersPositions: users.level2.map((u) => ({
-      id: u.id,
-      x: u.x,
-      y: u.y,
-    })),
   });
 });
 
