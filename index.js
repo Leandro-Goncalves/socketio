@@ -52,15 +52,17 @@ io.on("connection", (socket) => {
     socket.to("fistRoom").emit("userSendMessage", { message, id: socket.id });
   });
 
-  socket.on("userChangePosition", ({ id, x, y }) => {
+  socket.on("userChangePosition", ({ id, x, y, animationName }) => {
     const currentUser = Array.from(users).find((e) => e.id === id);
     currentUser.x = x;
     currentUser.y = y;
+    currentUser.animationName = animationName;
 
     socket.to("fistRoom").emit("updatePositions", {
       id,
       x,
       y,
+      animationName
     });
   });
 });
