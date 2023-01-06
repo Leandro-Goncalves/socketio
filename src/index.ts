@@ -6,15 +6,12 @@ import express, { NextFunction, Request, Response } from "express";
 import http from "http";
 
 import { AppError } from "@shared/errors/AppError";
-import createConnection from "@shared/typeorm";
 
 import { router } from "./routes";
 import { RouterSocket } from "./routesSocket";
 
 const app = express();
 const server = http.createServer(app);
-
-createConnection();
 
 app.use(express.json());
 app.use(Cors());
