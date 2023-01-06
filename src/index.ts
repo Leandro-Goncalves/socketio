@@ -4,12 +4,12 @@ import "express-async-errors";
 import Cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
 import http from "http";
-import { RouterSocket } from "routesSocket";
 
 import { AppError } from "@shared/errors/AppError";
 import createConnection from "@shared/typeorm";
 
 import { router } from "./routes";
+import { RouterSocket } from "./routesSocket";
 
 const app = express();
 const server = http.createServer(app);
