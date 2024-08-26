@@ -20,7 +20,7 @@ http://204.12.203.33/transmissao_cultura_sd/live.m3u8
 http://204.12.203.33/transmissao_recordnews_sd/live.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/3yZyaCm.png" group-title="🌎Canais abertos", GLOBO NEWS
 http://204.12.203.33/transmissao_globonews_sd/live.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/cnTtf6I.png" group-title="🌎Canais abertos",
+#EXTINF:-1 tvg-logo="https://i.imgur.com/cnTtf6I.png" group-title="🌎Canais abertos", NOVO TEMPO
 http://204.12.203.33/transmissao_novo_sd/live.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/kxrja0X.png" group-title="🌎Canais abertos", APARECIDA  
 http://204.12.203.33/transmissao_aparecida/live.m3u8
